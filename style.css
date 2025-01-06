@@ -7,16 +7,27 @@
 }
 body {
 	background-color: #ffb64c;
-	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
-}
+	height: 100vh;
+	margin: 0;
+  }
 
-.box {
+  .box {
 	width: 70vw;
-}
+	max-width: 1200px;
+	position: absolute;
+	transform: translate(-50%, 0);
+	top: 50px;
+	left: 50%;
+	background-color: white;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
 .container {
 	width: 100%;
@@ -48,21 +59,20 @@ a {
 	border-radius: 5px;
 }
 .controls {
-	padding: 30px 10px 0 10px;
-	display: -ms-grid;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-	grid-gap: 20px;
-	align-items: center;
+	gap: 20px;
 	border-left: 2px dashed black;
-}
+	padding-top: 30px;
+  }
 .controls button {
-	height: 50px;
-	border-radius: 25px;
-	border: none;
-	background-color: #ffb64c;
-	font-family: "Poppins", sans-serif;
-	font-size: 16px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ffb64c;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
 }
 .parrot {
 	background-color: #f03800;
@@ -199,7 +209,7 @@ a {
 	left: 20px;
 }
 .branch {
-	background-color: #ffb64c;
+	background-color: #8B4513;
 	height: 8px;
 	width: 210px;
 	position: absolute;
@@ -207,21 +217,40 @@ a {
 	bottom: -8px;
 	border-radius: 8px;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1200px) {
 	.box {
-		width: 95vw;
+	  width: 90vw;
 	}
+  }
+  
+  @media screen and (max-width: 1024px) {
+	.box {
+	  width: 95vw;
+	}
+  }
+  
+  @media screen and (max-width: 750px) {
+	.box {
+	  width: 100vw;
+	}
+  
 	.container {
-		-ms-grid-columns: 1fr;
-		grid-template-columns: 1fr;
+	  grid-template-columns: 1fr;
+	  padding: 20px;
 	}
+  
 	.controls {
-		border: none;
-		border-top: 2px dashed black;
+	  border-top: 2px dashed black;
 	}
+  
 	.controls button {
-		height: 35px;
-		font-size: 13px;
+	  height: 35px;
+	  font-size: 14px;
 	}
-}
-
+  }
+  
+  @media screen and (max-width: 480px) {
+	.controls button {
+	  font-size: 12px;
+	}
+  }

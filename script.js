@@ -37,15 +37,14 @@ let counter10 = 0;
 function setCounterValue(counter) {
 	return counter < colors.length - 1 ? counter + 1 : 0;
 }
-document.querySelectorAll("button").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        let target = document.querySelector(`.${btn.dataset.target}`);
-        let colorIndex = parseInt(btn.dataset.counter) || 0;
-        target.style.backgroundColor = colors[colorIndex];
-        btn.dataset.counter = (colorIndex + 1) % colors.length;
-    });
+bodyBtn.addEventListener("click", () => {
+	document.querySelectorAll(".body-clr").forEach((item) => {
+		item.style.backgroundColor = colors[counter1];
+	});
+	document.querySelector(".wing-color2-inner").style.borderTopColor =
+		colors[counter1];
+	counter1 = setCounterValue(counter1);
 });
-
 mainWingBtn.addEventListener("click", () => {
 	document.querySelector(".wing-color1").style.backgroundColor =
 		colors[counter2];
@@ -86,5 +85,3 @@ eyeBtn.addEventListener("click", () => {
 	document.querySelector(".eye").style.backgroundColor = colors[counter10];
 	counter10 = setCounterValue(counter10);
 });
-
-
